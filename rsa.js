@@ -104,11 +104,6 @@ const keySize = 8;
 const keys = generateKeys(keySize);
 let privateKey = { d: 317, n: 469 };
 let publicKey = { e: 5, n: 469 };
-// console.log(keys);
-let encrypt = encryptRSA('Hello World', publicKey);
-let decrypt = decryptRSA(encrypt, privateKey);
-console.log(`encrypt: ${encrypt}`);
-console.log(`decrypt: ${decrypt}`);
 
 //{ publicKey: { e: 5, n: 469 }, privateKey: { d: 317, n: 469 } }
 //sambungin firebase
@@ -128,6 +123,13 @@ const masterPassword = 'passwordmaster';
 // Minta username dan password dari pengguna
 const username = prompt('Masukkan username:');
 const password = prompt('Masukkan password:');
+
+// console.log(keys);
+let decrypt = password;
+let encrypt = encryptRSA(decrypt, publicKey);
+decrypt = decryptRSA(encrypt, privateKey);
+console.log(`encrypt: ${encrypt}`);
+console.log(`decrypt: ${decrypt}`);
 
 // Minta password master dari pengguna
 const masterPasswordInput = prompt('Masukkan password master:');
